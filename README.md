@@ -48,3 +48,5 @@ export default tseslint.config({
   },
 })
 ```
+
+# React + TailWindCss + React Router + React Slick
