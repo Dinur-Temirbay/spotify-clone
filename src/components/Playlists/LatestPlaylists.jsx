@@ -30,7 +30,7 @@ export function LatestPlaylists() {
 						</p>
 						<FaCirclePlay
 							size={35}
-							color='LimeGreen'
+							color='SpringGreen'
 							className='absolute right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:scale-110'
 						/>
 					</div>

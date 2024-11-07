@@ -36,7 +36,6 @@ export function PlaylistTracks() {
 						</p>
 						<div className='flex items-center gap-2 mt-3 ml-2'>
 							<img src='/public/Logo.png' alt='PlayListTracksLogo' width={20} />
-							{/* Тута динамика */}
 							<p className='text-white text-sm font-bold'>Spotify</p>
 							<p className='text-[#b3b3b3] text-sm font-medium'>
 								{playlist.track.length} треков, примерно 2 ч. 30 мин.

@@ -3,11 +3,13 @@ import { artist } from '../../data';
 import { CiCirclePlus } from 'react-icons/ci';
 import { useParams } from 'react-router-dom';
 import { useCurrentTrack } from '../AudioPlayer/CurrentTrackContext';
+import { useFavorites } from '../FavoritePlaylist/FavoritesContext';
 
 export function ArtistTrackList() {
 	const { setCurrentTrack } = useCurrentTrack();
-
 	const { artistId } = useParams();
+	const { addFavorite } = useFavorites();
+
 	const artistTracks = artist.find(p => p.artistId === parseInt(artistId));
 
 	if (!artistTracks) {
@@ -55,6 +57,7 @@ export function ArtistTrackList() {
 								<CiCirclePlus
 									size={20}
 									className='hover:scale-105 hover:text-white cursor-pointer'
+									onClick={() => addFavorite(item)}
 								/>
 							</td>
 							<td className='text-center rounded-r-md'>{item.duration}</td>

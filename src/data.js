@@ -1030,7 +1030,9 @@ export const artist = [
 				artist: 'Billie Eilish',
 				title: 'BIRDS OF A FEATHER',
 				duration: '3:30',
-				listened: 1_387_073_636
+				listened: 1_387_073_636,
+				lyrics: [''],
+				album: 'HIM ME HARD AND SOFT'
 			},
 			{
 				imgSrc:
@@ -1042,7 +1044,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '4:58',
 				listened: 1_428_082_454,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Happier Than Ever'
 			},
 			{
 				imgSrc:
@@ -1054,7 +1057,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '4:21',
 				listened: 466_813_878,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'HIM ME HARD AND SOFT'
 			},
 			{
 				imgSrc:
@@ -1066,7 +1070,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '3:16',
 				listened: 1_972_778_103,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'WHEN WE ALL FALL ASPLEEP, WHERE DO WE GO'
 			},
 			{
 				imgSrc:
@@ -1078,7 +1083,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '5:03',
 				listened: 503_386_852,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'HIM ME HARD AND SOFT'
 			},
 			{
 				imgSrc:
@@ -1090,7 +1096,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '3:30',
 				listened: 500_015_857,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'dont smile at me'
 			},
 			{
 				imgSrc:
@@ -1102,7 +1109,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '2:59',
 				listened: 305_578_565,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'HIM ME HARD AND SOFT'
 			},
 			{
 				imgSrc:
@@ -1114,7 +1122,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '3:20',
 				listened: 3_045_759_901,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'lovely (with Khalid)'
 			},
 			{
 				imgSrc:
@@ -1126,7 +1135,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '3:42',
 				listened: 1_097_027_962,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'What Was I Made For?[From The Motion Picture "Barbie"]'
 			},
 			{
 				imgSrc:
@@ -1138,7 +1148,8 @@ export const artist = [
 				artist: 'Billie Eilish',
 				duration: '5:43',
 				listened: 257_441_832,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'HIM ME HARD AND SOFT'
 			}
 			// Другие треки в этом плейлисте артиста
 		]
@@ -1160,7 +1171,8 @@ export const artist = [
 				artist: ['The Weeknd', 'JENNIE', 'Lily-Rose Depp'],
 				duration: '4:04',
 				listened: 1_355_921_467,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'The Idol Episode 4 (Music from the HBO Original Series)'
 			},
 			{
 				imgSrc:
@@ -1171,7 +1183,8 @@ export const artist = [
 				artist: 'JENNIE',
 				duration: '2:16',
 				listened: 100_344_612,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Mantra'
 			},
 			{
 				imgSrc:
@@ -1182,7 +1195,8 @@ export const artist = [
 				artist: 'JENNIE',
 				duration: '2:47',
 				listened: 163_550_274,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'SPOT!'
 			},
 			{
 				imgSrc:
@@ -1193,7 +1207,8 @@ export const artist = [
 				artist: 'JENNIE',
 				duration: '2:59',
 				listened: 228_637_487,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'JENNIE Special Single [You & Me]'
 			},
 			{
 				imgSrc:
@@ -1204,7 +1219,8 @@ export const artist = [
 				artist: 'JENNIE',
 				duration: '2:49',
 				listened: 662_156_660,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'SOLO'
 			},
 			{
 				imgSrc:
@@ -1215,7 +1231,8 @@ export const artist = [
 				artist: 'JENNIE',
 				duration: '2:59',
 				listened: 82_529_120,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'JENNIE Special Single [You & Me]'
 			},
 			{
 				imgSrc:
@@ -1226,7 +1243,8 @@ export const artist = [
 				artist: ['The Weeknd', 'JENNIE', 'Lily-Rose Depp'],
 				duration: '3:35',
 				listened: 26_686_682,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'One Of The Girls'
 			},
 			{
 				imgSrc:
@@ -1237,7 +1255,8 @@ export const artist = [
 				artist: 'JENNIE',
 				duration: '2:45',
 				listened: 20_343_175,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Mika`s Laundry'
 			},
 			{
 				imgSrc:
@@ -1248,7 +1267,8 @@ export const artist = [
 				artist: 'JENNIE',
 				duration: '2:45',
 				listened: 33_278_983,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'BLACKPINK 2021 `THE SHOW` LIVE'
 			},
 			{
 				imgSrc:
@@ -1259,7 +1279,8 @@ export const artist = [
 				artist: ['The Weeknd', 'JENNIE', 'Lily-Rose Depp'],
 				duration: '5:05',
 				listened: 7_273_110,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'One Of The Girls'
 			}
 			// Другие треки в этом плейлисте артиста
 		]
@@ -1281,7 +1302,8 @@ export const artist = [
 				artist: ['The Weeknd', 'Playboy Carti'],
 				duration: '4:16',
 				listened: 179_957_557,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Timeless'
 			},
 			{
 				imgSrc:
@@ -1292,7 +1314,8 @@ export const artist = [
 				artist: ['The Weeknd', 'JENNIE', 'Lily Rose Depp'],
 				duration: '4:04',
 				listened: 1_358_470_030,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'The Idol Episode 4 (Music from the HBO Original Series)'
 			},
 			{
 				imgSrc:
@@ -1303,7 +1326,8 @@ export const artist = [
 				artist: 'The Weeknd',
 				duration: '3:20',
 				listened: 4_545_879_561,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Afer hours'
 			},
 			{
 				imgSrc:
@@ -1314,7 +1338,8 @@ export const artist = [
 				artist: ['The Weeknd', 'Daft Punk'],
 				duration: '3:50',
 				listened: 3_564_309_050,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Starboy'
 			},
 			{
 				imgSrc:
@@ -1325,7 +1350,8 @@ export const artist = [
 				artist: 'The Weeknd',
 				duration: '4:20',
 				listened: 2_498_233_715,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Starboy'
 			},
 			{
 				imgSrc:
@@ -1336,7 +1362,8 @@ export const artist = [
 				artist: 'The Weeknd',
 				duration: '3:40',
 				listened: 97_491_291,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Dancing In The Flames'
 			},
 			{
 				imgSrc:
@@ -1347,7 +1374,8 @@ export const artist = [
 				artist: 'The Weeknd',
 				duration: '3:35',
 				listened: 2_155_323_733,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'After Hours'
 			},
 			{
 				imgSrc:
@@ -1358,7 +1386,8 @@ export const artist = [
 				artist: 'The Weeknd',
 				duration: '4:02',
 				listened: 2_460_832_965,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Beauty Behind The Madness'
 			},
 			{
 				imgSrc:
@@ -1369,7 +1398,8 @@ export const artist = [
 				artist: ['The Weeknd', 'Lana Del Rey'],
 				duration: '1:51',
 				listened: 1_221_603_170,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Starboy'
 			},
 			{
 				imgSrc:
@@ -1381,7 +1411,8 @@ export const artist = [
 				artist: ['The Weeknd', 'Playboi Carti', 'Madonna'],
 				duration: '3:35',
 				listened: 972_496_565,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'The Idol Vol.1 (Music from the HBO Original Series)'
 			}
 			// Другие треки в этом плейлисте
 		]
@@ -1403,7 +1434,8 @@ export const artist = [
 				artist: ['Shawn Mendes', 'Camila Cabello'],
 				duration: '3:10',
 				listened: 2_857_700_217,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Shawn Mendes (Deluxe)'
 			},
 			{
 				imgSrc:
@@ -1414,7 +1446,8 @@ export const artist = [
 				artist: ['Camila Cabello'],
 				duration: '3:39',
 				listened: 623_352_496,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Romance'
 			},
 			{
 				imgSrc:
@@ -1425,7 +1458,8 @@ export const artist = [
 				artist: ['Camila Cabello', 'Young Thug'],
 				duration: '3:37',
 				listened: 2_159_429_662,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Camila'
 			},
 			{
 				imgSrc:
@@ -1443,7 +1477,8 @@ export const artist = [
 				],
 				duration: '3:00',
 				listened: 19_583_003,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Move (feat. Camila Cabello)'
 			},
 			{
 				imgSrc:
@@ -1454,7 +1489,8 @@ export const artist = [
 				artist: ['Camila Cabello', 'Ed Sheeran'],
 				duration: '3:26',
 				listened: 957_891_157,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Familia'
 			},
 			{
 				imgSrc:
@@ -1465,7 +1501,8 @@ export const artist = [
 				artist: 'Camila Cabello',
 				duration: '3:46',
 				listened: 917_419_057,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Camila'
 			},
 			{
 				imgSrc:
@@ -1476,7 +1513,8 @@ export const artist = [
 				artist: ['Camila Cabello', 'DaBaby'],
 				duration: '2:50',
 				listened: 734_703_036,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Romance'
 			},
 			{
 				imgSrc:
@@ -1487,7 +1525,8 @@ export const artist = [
 				artist: ['Camila Cabello', 'Playboi Carti)'],
 				duration: '2:54',
 				listened: 120_645_783,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'C,XOXO'
 			},
 			{
 				imgSrc:
@@ -1498,7 +1537,8 @@ export const artist = [
 				artist: ['Shawn Mendes', 'Camila Cabello'],
 				duration: '3:43',
 				listened: 634_303_415,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'HandWritten'
 			},
 			{
 				imgSrc:
@@ -1509,7 +1549,8 @@ export const artist = [
 				artist: ['Ed Sheeran', 'Camila Cabello', 'Cardi B'],
 				duration: '3:24',
 				listened: 788_657_303,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'No.6 Collaborations Project'
 			}
 			// Другие треки в этом плейлисте
 		]
@@ -1531,7 +1572,8 @@ export const artist = [
 				artist: 'Juice WRLD',
 				duration: '3:59',
 				listened: 2_665_714_161,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Goodbye & Good Riddance'
 			},
 			{
 				imgSrc:
@@ -1542,7 +1584,8 @@ export const artist = [
 				artist: 'Juice WRLD',
 				duration: '2:45',
 				listened: 1_729_100_899,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Goodbye & Good Riddance'
 			},
 			{
 				imgSrc:
@@ -1553,7 +1596,8 @@ export const artist = [
 				artist: 'Juice WRLD',
 				duration: '4:00',
 				listened: 1_361_101_580,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Death Race For Love (Bonus Track Version)'
 			},
 			{
 				imgSrc:
@@ -1564,7 +1608,8 @@ export const artist = [
 				artist: 'Juice WRLD',
 				duration: '3:35',
 				listened: 555_309_838,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Let Me Know (I Wonder Why Freestyle)'
 			},
 			{
 				imgSrc:
@@ -1575,7 +1620,8 @@ export const artist = [
 				artist: 'Juice WRLD',
 				duration: '2:55',
 				listened: 934_238_928,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Goodbye & Good Riddance'
 			},
 			{
 				imgSrc:
@@ -1586,7 +1632,8 @@ export const artist = [
 				artist: 'Juice WRLD',
 				duration: '3:14',
 				listened: 947_816_554,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Legends Never Die'
 			},
 			{
 				imgSrc:
@@ -1597,7 +1644,8 @@ export const artist = [
 				artist: ['Ellie Goulding', 'Juice WRLD'],
 				duration: '3:08',
 				listened: 801_472_189,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Brightest Blue'
 			},
 			{
 				imgSrc:
@@ -1608,7 +1656,8 @@ export const artist = [
 				artist: ['Juice WRLD', 'Marshmello'],
 				duration: '3:25',
 				listened: 1_000_035_270,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Legends Never Die'
 			},
 			{
 				imgSrc:
@@ -1619,7 +1668,8 @@ export const artist = [
 				artist: ['Juice WRLD', 'Lil Uzi Vert'],
 				duration: '4:18',
 				listened: 662_170_568,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Goodbye & Good Riddance'
 			},
 			{
 				imgSrc:
@@ -1630,7 +1680,8 @@ export const artist = [
 				artist: 'Juice WRLD',
 				duration: '3:17',
 				listened: 9_798_158,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'The Pre-Party (Extended)'
 			}
 		]
 	},
@@ -1651,7 +1702,8 @@ export const artist = [
 				artist: 'Doja Cat',
 				duration: '3:50',
 				listened: 1_222_165_855,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Scarlet'
 			},
 			{
 				imgSrc:
@@ -1662,7 +1714,8 @@ export const artist = [
 				artist: 'Doja Cat',
 				duration: '2:52',
 				listened: 1_734_107_568,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Planet Her'
 			},
 			{
 				imgSrc:
@@ -1673,7 +1726,8 @@ export const artist = [
 				artist: ['Doja Cat', 'SZA'],
 				duration: '3:28',
 				listened: 1_951_910_597,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Planet Her'
 			},
 			{
 				imgSrc:
@@ -1684,7 +1738,8 @@ export const artist = [
 				artist: 'Doja Cat',
 				duration: '3:10',
 				listened: 502_392_660,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Amala'
 			},
 			{
 				imgSrc:
@@ -1695,7 +1750,8 @@ export const artist = [
 				artist: 'Doja Cat',
 				duration: '4:25',
 				listened: 621_198_378,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Scarlet'
 			},
 			{
 				imgSrc:
@@ -1706,7 +1762,8 @@ export const artist = [
 				artist: 'Doja Cat',
 				duration: '3:46',
 				listened: 1_151_202_088,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Hot Pink'
 			},
 			{
 				imgSrc:
@@ -1717,7 +1774,8 @@ export const artist = [
 				artist: ['Post Malone', 'Doja Cat'],
 				duration: '3:12',
 				listened: 884_796_896,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Twelve Carat Toothache'
 			},
 			{
 				imgSrc:
@@ -1728,7 +1786,8 @@ export const artist = [
 				artist: ['Doja Cat', 'The Weeknd'],
 				duration: '3:06',
 				listened: 887_523_300,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Planet Her'
 			},
 			{
 				imgSrc:
@@ -1739,7 +1798,8 @@ export const artist = [
 				artist: 'Doja Cat',
 				duration: '3:30',
 				listened: 1_228_586_368,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'Planet Her'
 			},
 			{
 				imgSrc:
@@ -1750,7 +1810,8 @@ export const artist = [
 				artist: 'Doja Cat',
 				duration: '3:21',
 				listened: 370_472_340,
-				lyrics: ['']
+				lyrics: [''],
+				album: 'So High'
 			}
 		]
 	}
@@ -1762,5 +1823,6 @@ export const user = {
 	latest: {
 		playList: [],
 		artistPlayList: []
-	}
+	},
+	favorites: []
 };

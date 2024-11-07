@@ -1,23 +1,15 @@
-import { playlists } from '../../data';
+import { user } from '../../data';
 import { CiCirclePlus } from 'react-icons/ci';
 import { CgTime } from 'react-icons/cg';
-import { Link, useParams } from 'react-router-dom';
-import { useCurrentTrack } from '../AudioPlayer/CurrentTrackContext';
-import { user } from '../../data';
-import { useFavorites } from '../FavoritePlaylist/FavoritesContext';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
-export function PlaylistTrackList() {
-	const { setCurrentTrack } = useCurrentTrack();
-	const { addFavorite } = useFavorites();
+export function FavoriteTrackList() {
+	const [favorites, setFavorites] = useState(user.favorites);
 
-	const { playlistId } = useParams();
-	const playlistTracks = playlists.find(
-		p => p.playlistId === parseInt(playlistId)
-	);
-
-	if (!playlistTracks) {
-		return <div className='text-white'>Tracks not found</div>;
-	}
+	useEffect(() => {
+		setFavorites([...user.favorites]);
+	}, [user.favorites]);
 
 	return (
 		<>
@@ -35,7 +27,7 @@ export function PlaylistTrackList() {
 					</tr>
 				</thead>
 				<tbody>
-					{playlistTracks.track.map((item, index) => (
+					{favorites.map((item, index) => (
 						<tr key={index} className='hover:bg-white/15 hover:text-white'>
 							<td className='text-center rounded-l-md'>{index + 1}</td>
 							<td className='flex items-center gap-3 p-2'>
@@ -47,11 +39,7 @@ export function PlaylistTrackList() {
 								/>
 								<div>
 									<p className='text-white truncate w-60'>
-										<a
-											href='#'
-											className='cursor-pointer hover:underline '
-											onClick={() => setCurrentTrack(item)}
-										>
+										<a href='#' className='cursor-pointer hover:underline '>
 											{item.title}
 										</a>
 									</p>
@@ -75,7 +63,6 @@ export function PlaylistTrackList() {
 								<CiCirclePlus
 									size={20}
 									className='hover:scale-105 hover:text-white cursor-pointer'
-									onClick={() => addFavorite(item)}
 								/>
 							</td>
 							<td className='text-center rounded-r-md pr-6'>{item.duration}</td>

@@ -35,12 +35,12 @@ export function MusicCategoryList() {
 										alt='artist'
 										className='rounded-md'
 									/>
-									<p className='text-[#b3b3b3] text-sm font-medium mt-2'>
+									<p className='text-[#b3b3b3] text-sm font-normal mt-2 line-clamp-2'>
 										{item.playListDescription?.join(', ')}
 									</p>
 									<FaCirclePlay
 										size={45}
-										color='LimeGreen'
+										color='SpringGreen'
 										className='absolute bottom-[68px] right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 hover:scale-110'
 									/>
 								</div>
