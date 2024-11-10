@@ -2,13 +2,13 @@ import { playlists } from '../../data';
 import { CiCirclePlus } from 'react-icons/ci';
 import { CgTime } from 'react-icons/cg';
 import { Link, useParams } from 'react-router-dom';
-import { useCurrentTrack } from '../AudioPlayer/CurrentTrackContext';
-import { user } from '../../data';
-import { useFavorites } from '../FavoritePlaylist/FavoritesContext';
+import { useCurrentTrack } from '../../context/CurrentTrackContext';
+import { useFavorites } from '../../context/FavoritesContext';
+import { FaCheckCircle } from 'react-icons/fa';
 
 export function PlaylistTrackList() {
 	const { setCurrentTrack } = useCurrentTrack();
-	const { addFavorite } = useFavorites();
+	const { addFavorite, favorites } = useFavorites();
 
 	const { playlistId } = useParams();
 	const playlistTracks = playlists.find(
@@ -18,6 +18,10 @@ export function PlaylistTrackList() {
 	if (!playlistTracks) {
 		return <div className='text-white'>Tracks not found</div>;
 	}
+
+	const handleAddToFavorite = item => {
+		addFavorite(item);
+	};
 
 	return (
 		<>
@@ -36,7 +40,11 @@ export function PlaylistTrackList() {
 				</thead>
 				<tbody>
 					{playlistTracks.track.map((item, index) => (
-						<tr key={index} className='hover:bg-white/15 hover:text-white'>
+						<tr
+							key={index}
+							className='hover:bg-white/15 hover:text-white'
+							onClick={() => setCurrentTrack(item)}
+						>
 							<td className='text-center rounded-l-md'>{index + 1}</td>
 							<td className='flex items-center gap-3 p-2'>
 								<img
@@ -47,11 +55,7 @@ export function PlaylistTrackList() {
 								/>
 								<div>
 									<p className='text-white truncate w-60'>
-										<a
-											href='#'
-											className='cursor-pointer hover:underline '
-											onClick={() => setCurrentTrack(item)}
-										>
+										<a href='#' className='cursor-pointer hover:underline'>
 											{item.title}
 										</a>
 									</p>
@@ -72,11 +76,15 @@ export function PlaylistTrackList() {
 							</td>
 							<td></td>
 							<td className='pr-10'>
-								<CiCirclePlus
-									size={20}
-									className='hover:scale-105 hover:text-white cursor-pointer'
-									onClick={() => addFavorite(item)}
-								/>
+								{favorites.some(fav => fav.title === item.title) ? (
+									<FaCheckCircle size={20} className='text-green-500' />
+								) : (
+									<CiCirclePlus
+										size={20}
+										className='hover:scale-105 hover:text-white cursor-pointer'
+										onClick={() => handleAddToFavorite(item)}
+									/>
+								)}
 							</td>
 							<td className='text-center rounded-r-md pr-6'>{item.duration}</td>
 						</tr>

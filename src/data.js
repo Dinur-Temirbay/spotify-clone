@@ -19,7 +19,55 @@ export const playlists = [
 				artist: 'Billie Eilish',
 				album: 'HIT ME HARD AND SOFT',
 				duration: '3:30',
-				lyrics: ['']
+				lyrics: [
+					{
+						lines: [
+							"'Til I'm in the grave",
+							'I want you to stay',
+							"'Til I'm in the grave",
+							"'Til I rot away, dead and buried",
+							"'Til I'm in the casket you carry",
+							"If you go, I'm going too, uh",
+							"'Cause it was always you, alright",
+							"And if I'm turning blue, please don't save me",
+							'Nothing left to lose without my baby',
+							'Birds of a feather, we should stick together, I know',
+							"I said I'd never think I wasn't better alone",
+							"Can't change the weather, might not be forever",
+							"But if it's forever, it's even better",
+							"And I don't know what I'm crying for",
+							"I don't think I could love you more",
+							'It might not be long, but baby, I',
+							"I'll love you 'til the day that I die",
+							"'Til the day that I die",
+							"'Til the light leaves my eyes",
+							"'Til the day that I die"
+						]
+					},
+					{
+						lines: [
+							'I want you to see, hm',
+							'How you look to me, hm',
+							"You wouldn't believe if I told ya",
+							'You would keep the compliments I throw ya',
+							"But you're so full of shit, uh",
+							"Tell me it's a bit, oh",
+							"Say you don't see it, your mind's polluted",
+							"Say you wanna quit, don't be stupid",
+							"And I don't know what I'm crying for",
+							"I don't think I could love you more",
+							'Might not be long, but baby, I',
+							"Don't wanna say goodbye",
+							"Birds of a feather, we should stick together, I know ('til the day that I die)",
+							"I said I'd never think I wasn't better alone ('til the light leaves my eyes)",
+							"Can't change the weather, might not be forever ('til the day that I die)",
+							"But if it's forever, it's even better",
+							'I knew you in another life',
+							'You had that same look in your eyes',
+							"I love you, don't act so surprised"
+						]
+					}
+				]
 			},
 			{
 				imgSrc:
@@ -1484,7 +1532,7 @@ export const artist = [
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273370ed6a9ced20874385fb147',
 				artistImg:
-					'https://i.scdn.co/image/ab67618600001016b4c8349afeb32cf0531c98a08',
+					'https://i.scdn.co/image/ab67618600001016b4c8349afeb32cf0531c98a0',
 				title: 'Bam Bam (feat. Ed Sheeran)',
 				artist: ['Camila Cabello', 'Ed Sheeran'],
 				duration: '3:26',
@@ -1824,5 +1872,6 @@ export const user = {
 		playList: [],
 		artistPlayList: []
 	},
-	favorites: []
+	favorites: [],
+	subscribe: []
 };

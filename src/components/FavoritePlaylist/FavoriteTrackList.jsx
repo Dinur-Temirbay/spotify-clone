@@ -1,15 +1,10 @@
-import { user } from '../../data';
-import { CiCirclePlus } from 'react-icons/ci';
+import { HiOutlineXCircle } from 'react-icons/hi2';
 import { CgTime } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useFavorites } from '../../context/FavoritesContext';
 
 export function FavoriteTrackList() {
-	const [favorites, setFavorites] = useState(user.favorites);
-
-	useEffect(() => {
-		setFavorites([...user.favorites]);
-	}, [user.favorites]);
+	const { favorites, removeFavorite } = useFavorites();
 
 	return (
 		<>
@@ -60,9 +55,11 @@ export function FavoriteTrackList() {
 							</td>
 							<td></td>
 							<td className='pr-10'>
-								<CiCirclePlus
-									size={20}
+								<HiOutlineXCircle
+									size={22}
+									strokeWidth={1}
 									className='hover:scale-105 hover:text-white cursor-pointer'
+									onClick={() => removeFavorite(item)}
 								/>
 							</td>
 							<td className='text-center rounded-r-md pr-6'>{item.duration}</td>

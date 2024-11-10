@@ -6,6 +6,7 @@ export const settings = {
 	slidesToShow: 6, // Количество видимых слайдов
 	slidesToScroll: 1, // Количество слайдов для прокрутки
 	arrows: false, // Показать стрелки навигации
+	swipeToSlide: true,
 	responsive: [
 		// Настройки для адаптивности
 		{
@@ -13,8 +14,8 @@ export const settings = {
 			settings: {
 				slidesToShow: 3,
 				slidesToScroll: 1,
-				infinite: true,
-				dots: true
+				infinite: false,
+				dots: false
 			}
 		},
 		{
@@ -22,7 +23,7 @@ export const settings = {
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
-				dots: true
+				dots: false
 			}
 		}
 	]

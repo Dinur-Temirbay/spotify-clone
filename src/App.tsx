@@ -10,8 +10,8 @@ import { FullScreen } from './pages/FullScreen';
 import { TrackLyric } from './pages/TrackLyric';
 import { FullScreenTrackLyric } from './components/FullScreen/FullScreenTrackLyric';
 import { Layout } from './components/Layout';
-import { CurrentTrackProvider } from './components/AudioPlayer/CurrentTrackContext';
-import { FavoritesProvider } from './components/FavoritePlaylist/FavoritesContext';
+import { CurrentTrackProvider } from './context/CurrentTrackContext';
+import { FavoritesProvider } from './context/FavoritesContext';
 
 function App() {
 	return (

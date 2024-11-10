@@ -18,10 +18,13 @@ import { AiOutlineFullscreenExit } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCurrentTrack } from '../components/AudioPlayer/CurrentTrackContext';
+import { useCurrentTrack } from '../context/CurrentTrackContext';
+import { useFavorites } from '../context/FavoritesContext';
+import { FaCheckCircle } from 'react-icons/fa';
 
 export function FullScreen() {
 	const { currentTrack } = useCurrentTrack();
+	const { addFavorite, favorites } = useFavorites();
 	const navigate = useNavigate();
 	const [isPlayerVisible, setIsPlayerVisible] = useState(true);
 	const [isAnimated, setIsAnimated] = useState(false);
@@ -31,6 +34,12 @@ export function FullScreen() {
 		navigate('/');
 		if (document.fullscreenElement) {
 			document.exitFullscreen();
+		}
+	};
+
+	const handleAddToFavorite = currentTrack => {
+		if (currentTrack) {
+			addFavorite(currentTrack);
 		}
 	};
 
@@ -87,23 +96,17 @@ export function FullScreen() {
 						src={currentTrack.imgSrc}
 						alt='playerImgFull'
 						className={`h-96 w-96 rounded-lg transition-transform duration-1000 ease-in-out ${
-							isAnimated
+							isAnimated && currentTrack.artistImg
 								? 'scale-50 && -translate-x-24 && translate-y-36'
-								: 'scale-100'
+								: '-translate-x-0'
 						}`}
-						// ! Когда фона нет
-						// className={`h-96 w-96 rounded-lg transition-transform duration-1000 ease-in-out ${
-						// 	isAnimated ? '-translate-y-0' : 'translate-y-20'
-						// }`}
 					/>
 					<div
 						className={`transition-transform duration-1000 ease-in-out ${
-							isAnimated ? '-translate-x-52 && translate-y-14' : 'translate-x-0'
+							isAnimated && currentTrack.artistImg
+								? '-translate-x-52 && translate-y-14'
+								: 'translate-y-0'
 						}`}
-						// ! Когда фона нет
-						// className={`transition-transform duration-1000 ease-in-out ${
-						// 	isAnimated ? 'translate-x-0' : '-translate-x-20'
-						// }`}
 					>
 						<p className='text-white text-4xl font-medium'>
 							{currentTrack.title}
@@ -127,10 +130,15 @@ export function FullScreen() {
 					</div>
 					<div className='flex justify-between items-center gap-6 mt-10'>
 						<div className='w-1/3'>
-							<CiCirclePlus
-								size={25}
-								className='cursor-pointer text-[#b3b3b3] hover:text-white hover:scale-110'
-							/>
+							{favorites.some(fav => fav.title === currentTrack.title) ? (
+								<FaCheckCircle size={25} className='text-green-500' />
+							) : (
+								<CiCirclePlus
+									size={25}
+									className='hover:scale-105 text-white cursor-pointer'
+									onClick={() => handleAddToFavorite(currentTrack)}
+								/>
+							)}
 						</div>
 						<div className='flex justify-center items-center gap-6 w-1/3'>
 							<IoShuffle

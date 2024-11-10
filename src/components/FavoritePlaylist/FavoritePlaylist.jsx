@@ -3,7 +3,7 @@ import { FaCirclePlay, FaCirclePause } from 'react-icons/fa6';
 import { FavoriteTrackList } from './FavoriteTrackList';
 import { user } from '../../data';
 import { FaHeart } from 'react-icons/fa';
-import { useFavorites } from '../../components/FavoritePlaylist/FavoritesContext';
+import { useFavorites } from '../../context/FavoritesContext';
 
 export function FavoritePlaylist() {
 	const { favorites } = useFavorites();
@@ -23,8 +23,8 @@ export function FavoritePlaylist() {
 						</h1>
 						<div className='flex items-center gap-2'>
 							<p className='text-white text-sm font-bold'>{user.name}</p>
-							<p className='text-[#b3b3b3] text-sm font-medium'>
-								{favorites.length} трека
+							<p className='text-[#b3b3b3] text-sm font-semibold'>
+								• {favorites.length} трека
 							</p>
 						</div>
 					</div>

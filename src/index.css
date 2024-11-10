@@ -18,3 +18,16 @@ body {
 	background-color: teal;
 	border-radius: 4px;
 }
+
+@keyframes slide-in {
+	0% {
+		transform: translateX(-100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+.animate-slide-in {
+	animation: slide-in 8s ease-in-out infinite;
+}

@@ -1,13 +1,34 @@
 import { Footer } from '../Footer/Footer';
 import { artist } from '../../data';
+import { user } from '../../data';
 import { FaCirclePlay, FaCirclePause } from 'react-icons/fa6';
 import { ArtistTrackList } from './ArtistTrackList';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 export function ArtistPlaylist() {
 	const { artistId } = useParams();
 	const artistPage = artist.find(p => p.artistId === parseInt(artistId));
+	const [isSubscribed, setIsSubscribed] = useState(false);
+
+	useEffect(() => {
+		setIsSubscribed(
+			user.subscribe.some(sub => sub.artistId === artistPage.artistId)
+		);
+	}, [artistPage.artistId]);
+
+	const handleSubscription = () => {
+		if (isSubscribed) {
+			user.subscribe = user.subscribe.filter(
+				sub => sub.artistId !== artistPage.artistId
+			);
+			setIsSubscribed(false);
+		} else {
+			user.subscribe.push(artistPage);
+			setIsSubscribed(true);
+		}
+	};
 
 	if (!artistPage) {
 		return <div className='text-white'>Artist not found</div>;
@@ -56,8 +77,13 @@ export function ArtistPlaylist() {
 						color='LimeGreen'
 						className='cursor-pointer hover:scale-110'
 					/>
-					<button className='text-white text-sm font-semibold px-4 py-1 border-[1px] border-[#b3b3b3] hover:border-white hover:scale-105 rounded-full'>
-						Подписаться
+					<button
+						className={`text-white text-sm font-semibold px-4 py-1 border-[1px] border-white/50
+							${isSubscribed ? ' border-white/50' : 'hover:border-white'}
+							hover:scale-105 rounded-full`}
+						onClick={handleSubscription}
+					>
+						{isSubscribed ? 'Уже подписаны' : 'Подписаться'}
 					</button>
 				</div>
 				<ArtistTrackList />
