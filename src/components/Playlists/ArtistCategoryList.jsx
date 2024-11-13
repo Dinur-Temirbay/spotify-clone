@@ -9,9 +9,7 @@ export function ArtistCategoryList() {
 	return (
 		<div className='mt-6'>
 			<h2 className='text-white text-2xl font-semibold pl-5'>
-				<a href='#' className='hover:underline'>
-					Рекомендованные исполнители
-				</a>
+				Рекомендованные исполнители
 			</h2>
 			<div className='mt-3 px-3'>
 				<Slider {...settings}>

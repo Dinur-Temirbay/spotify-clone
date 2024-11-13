@@ -24,7 +24,6 @@ export function ArtistTrackList() {
 		setVisibleTracks(prevVisibleTracks => (prevVisibleTracks === 5 ? 10 : 5));
 	};
 
-	// Add favorite without resetting previous selections
 	const handleAddToFavorite = item => {
 		addFavorite(item);
 	};

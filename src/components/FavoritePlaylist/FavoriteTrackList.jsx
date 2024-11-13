@@ -1,10 +1,12 @@
 import { HiOutlineXCircle } from 'react-icons/hi2';
 import { CgTime } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
+import { useCurrentTrack } from '../../context/CurrentTrackContext';
 import { useFavorites } from '../../context/FavoritesContext';
 
 export function FavoriteTrackList() {
 	const { favorites, removeFavorite } = useFavorites();
+	const { setCurrentTrack } = useCurrentTrack();
 
 	return (
 		<>
@@ -23,7 +25,11 @@ export function FavoriteTrackList() {
 				</thead>
 				<tbody>
 					{favorites.map((item, index) => (
-						<tr key={index} className='hover:bg-white/15 hover:text-white'>
+						<tr
+							key={index}
+							className='hover:bg-white/15 hover:text-white'
+							onClick={() => setCurrentTrack(item)}
+						>
 							<td className='text-center rounded-l-md'>{index + 1}</td>
 							<td className='flex items-center gap-3 p-2'>
 								<img

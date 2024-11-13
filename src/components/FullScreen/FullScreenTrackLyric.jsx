@@ -58,7 +58,7 @@ export function FullScreenTrackLyric() {
 	}, []);
 
 	return (
-		<div className='h-screen w-full bg-gradient-to-b from-transparent to-blue-950'>
+		<div className='h-screen w-full bg-blue-500'>
 			<div className='flex flex-col w-full pt-14 px-24'>
 				<div className='flex items-center gap-5 transition-transform duration-500'>
 					<img
@@ -81,9 +81,9 @@ export function FullScreenTrackLyric() {
 						</p>
 					</div>
 				</div>
-				<div className='flex justify-center bg-transparent h-[640px] overflow-hidden px-4'>
+				<div className='flex justify-center h-[640px] overflow-hidden px-4'>
 					<div
-						className={`transition-transform duration-1000 ease-in-out ${
+						className={`transition-transform duration-1000 ease-in-out${
 							isAnimated ? 'translate-y-0' : 'translate-y-[600px]'
 						}`}
 					>

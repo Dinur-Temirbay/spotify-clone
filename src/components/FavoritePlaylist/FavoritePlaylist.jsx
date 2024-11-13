@@ -4,9 +4,20 @@ import { FavoriteTrackList } from './FavoriteTrackList';
 import { user } from '../../data';
 import { FaHeart } from 'react-icons/fa';
 import { useFavorites } from '../../context/FavoritesContext';
+import { useState } from 'react';
+import { useCurrentTrack } from '../../context/CurrentTrackContext';
 
 export function FavoritePlaylist() {
+	const [isPlaying, setIsPlaying] = useState(false);
 	const { favorites } = useFavorites();
+	const { setCurrentTrack } = useCurrentTrack();
+
+	const handlePlayPause = () => {
+		if (favorites && favorites.length > 0) {
+			setCurrentTrack(favorites[0]);
+			setIsPlaying(!isPlaying);
+		}
+	};
 
 	return (
 		<div className='h-screen mt-2 mr-2 relative overflow-y-scroll custom-scrollbar rounded-md bg-[#121212]'>
@@ -31,11 +42,21 @@ export function FavoritePlaylist() {
 				</div>
 				<div className='absolute top-56 inset-0 h-full w-full bg-gradient-to-b from-white/5 to-transparent'></div>
 				<div className='flex items-center mt-12 z-10 relative'>
-					<FaCirclePause
-						size={60}
-						color='LimeGreen'
-						className='cursor-pointer hover:scale-110'
-					/>
+					{isPlaying ? (
+						<FaCirclePause
+							size={60}
+							color='LimeGreen'
+							className='cursor-pointer hover:scale-110'
+							onClick={handlePlayPause}
+						/>
+					) : (
+						<FaCirclePlay
+							size={60}
+							color='LimeGreen'
+							className='cursor-pointer hover:scale-110'
+							onClick={handlePlayPause}
+						/>
+					)}
 				</div>
 				<FavoriteTrackList />
 			</div>

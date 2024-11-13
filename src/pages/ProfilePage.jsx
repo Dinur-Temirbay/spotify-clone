@@ -1,78 +1,68 @@
-import { FaUserCircle } from 'react-icons/fa';
 import { Footer } from '../components/Footer/Footer';
 import { user } from '../data';
-import Slider from 'react-slick';
-import { settings } from '../components/Playlists/slider-settings';
-import { Link } from 'react-router-dom';
+import { Modal } from '../components/Modal/Modal';
+import { useState, useContext } from 'react';
+import { Subscribe } from '../components/Profile/Subscribe';
+import { FaUser } from 'react-icons/fa';
+import { UserContext } from '../context/UserContext';
 
 export function ProfilePage() {
+	const { user, updateUserImage } = useContext(UserContext);
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const toggleModal = () => setIsModalOpen(!isModalOpen);
+
+	const handleSaveProfileImage = newImage => {
+		updateUserImage(newImage);
+		toggleModal();
+	};
+
 	return (
 		<div className='h-screen mt-2 mr-2 relative overflow-y-scroll custom-scrollbar rounded-md bg-[#121212]'>
-			<div className='absolute inset-0 h-1/2 bg-gradient-to-b from-gray-600 to-transparent'></div>
-			<div className='px-6 pt-32'>
+			<div className='absolute inset-0 h-[43%] bg-gradient-to-b from-zinc-600 to-zinc-800'></div>
+			<div className='px-6 pt-28 pb-5'>
 				<div className='z-10 relative flex items-center gap-5'>
 					{user.imgSrc ? (
-						<img src={user.imgSrc} alt='User' />
+						<img
+							src={user.imgSrc}
+							alt='User'
+							className='w-44 h-44 rounded-full'
+						/>
 					) : (
-						<FaUserCircle size={200} className='text-gray-400' />
+						<div className='w-44 h-44 rounded-full bg-zinc-800/80 flex justify-center items-center shadow-md shadow-black'>
+							<FaUser size={70} className='text-zinc-500' />
+						</div>
 					)}
 					<div>
 						<p className='text-white text-sm font-semibold pl-1'>Профиль</p>
-						<h1 className='text-white text-8xl font-bold'>{user.name}</h1>
+						<h1 className='text-white text-8xl font-bold py-4'>{user.name}</h1>
+						{user.subscribe.length >= 1 ? (
+							<span className='text-white text-sm font-semibold pl-1'>
+								• {user.subscribe.length} подписка
+							</span>
+						) : null}
 					</div>
 				</div>
 			</div>
-			<div className='absolute top-[350px] inset-0 h-1/5 w-full bg-gradient-to-b from-white/5 to-transparent'></div>
-			<div className='px-6 pt-16 flex gap-4'>
-				<button className='p-2 bg-white rounded-md cursor-pointer z-10 relative hover:scale-105'>
+			<div className='absolute top-[302px] inset-0 h-1/5 w-full bg-gradient-to-b from-neutral-800/80 to-transparent'></div>
+			<div className='px-6 py-10 flex gap-4'>
+				<button
+					className='p-2 bg-white rounded-md cursor-pointer z-10 relative hover:scale-105'
+					onClick={toggleModal}
+				>
 					Редактировать
 				</button>
 				<button className='p-2 bg-white rounded-md cursor-pointer z-10 relative hover:scale-105'>
 					Выйти
 				</button>
 			</div>
-
-			{user.subscribe.length >= 1 ? (
-				<div className='mt-6'>
-					<h2 className='text-white text-2xl font-semibold pl-5'>
-						<a href='#' className='hover:underline'>
-							Уже подписаны
-						</a>
-					</h2>
-					<div className='mt-3 px-3'>
-						<Slider {...settings}>
-							{user.subscribe.map((item, index) => (
-								<div key={index}>
-									<Link to={`/artistPlaylist/${item.artistId}`}>
-										<div
-											className='p-2 rounded-md hover:bg-[#1f1f1f] cursor-pointer relative group'
-											onClick={() => {
-												if (
-													!user.latest.artistPlayList.some(
-														artist => artist.artistId === item.artistId
-													)
-												) {
-													user.latest.artistPlayList.unshift(item);
-												}
-											}}
-										>
-											<img
-												src={item.artistPlaylistImg}
-												alt='artist'
-												className='rounded-full'
-											/>
-											<h3 className='text-white text-base font-medium mt-2'>
-												{item.artistName}
-											</h3>
-											<p className='text-[#b3b3b3] text-sm'>Профиль</p>
-										</div>
-									</Link>
-								</div>
-							))}
-						</Slider>
-					</div>
-				</div>
-			) : null}
+			{isModalOpen && (
+				<div className='fixed inset-0 bg-black opacity-50 z-20'></div>
+			)}
+			{isModalOpen && (
+				<Modal onClose={toggleModal} onSave={handleSaveProfileImage} />
+			)}
+			<Subscribe />
 			<Footer />
 		</div>
 	);

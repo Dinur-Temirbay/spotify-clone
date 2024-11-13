@@ -60,12 +60,37 @@ export function PlaylistTrackList() {
 										</a>
 									</p>
 									<p className='text-sm font-medium '>
-										<Link
-											to=''
-											className='cursor-pointer hover:underline hover:text-white'
-										>
-											{item.artist}
-										</Link>
+										{Array.isArray(item.artist) ? (
+											item.artist.map((artist, index) => {
+												const artistLink =
+													item.artistId && item.artistId[index]
+														? `/artistPlaylist/${item.artistId[index]}`
+														: '#';
+
+												return (
+													<span key={index}>
+														<Link
+															to={artistLink}
+															className='cursor-pointer hover:underline hover:text-white'
+														>
+															{artist}
+														</Link>
+														{index < item.artist.length - 1 && ', '}
+													</span>
+												);
+											})
+										) : (
+											<Link
+												to={
+													item.artistId
+														? `/artistPlaylist/${item.artistId}`
+														: '#'
+												}
+												className='cursor-pointer hover:underline hover:text-white'
+											>
+												{item.artist}
+											</Link>
+										)}
 									</p>
 								</div>
 							</td>

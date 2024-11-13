@@ -4,14 +4,27 @@ import { playlists } from '../../data';
 import { FaCirclePlay, FaCirclePause } from 'react-icons/fa6';
 import { CiCirclePlus } from 'react-icons/ci';
 import { useParams } from 'react-router-dom';
+import { useCurrentTrack } from '../../context/CurrentTrackContext';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export function PlaylistTracks() {
+	const [isPlaying, setIsPlaying] = useState(false);
 	const { playlistId } = useParams();
+	const { artistId } = useParams();
+	const { setCurrentTrack } = useCurrentTrack();
 	const playlist = playlists.find(p => p.playlistId === parseInt(playlistId));
 
 	if (!playlist) {
 		return <div className='text-white'>Playlist not found</div>;
 	}
+
+	const handlePlayPause = () => {
+		if (!isPlaying && playlist.track.length > 0) {
+			setCurrentTrack(playlist.track[0]);
+			setIsPlaying(!isPlaying);
+		}
+	};
 
 	return (
 		<div className='h-screen mt-2 mr-2 relative overflow-y-scroll custom-scrollbar rounded-md bg-[#121212]'>
@@ -30,9 +43,19 @@ export function PlaylistTracks() {
 							{playlist.playlistTitle}
 						</h1>
 						<p className='text-white mt-5 ml-2'>
-							<a href='#' className='cursor-pointer hover:underline'>
-								{playlist.playListDescription.join(', ')}
-							</a>
+							{playlist.playListDescription.map((item, index) => (
+								<span key={index}>
+									<Link
+										to={
+											item.artistId ? `/artistPlaylist/${item.artistId}` : '#'
+										}
+										className='cursor-pointer hover:underline'
+									>
+										{item.artist}
+									</Link>
+									{index < playlist.playListDescription.length - 1 && ', '}
+								</span>
+							))}
 						</p>
 						<div className='flex items-center gap-2 mt-3 ml-2'>
 							<img src='/public/Logo.png' alt='PlayListTracksLogo' width={20} />
@@ -45,15 +68,22 @@ export function PlaylistTracks() {
 				</div>
 				<div className='absolute top-60 inset-0 h-full w-full bg-gradient-to-b from-white/5 to-transparent'></div>
 				<div className='flex items-center gap-6 mt-10 z-10 relative'>
-					<FaCirclePause
-						size={60}
-						color='LimeGreen'
-						className='cursor-pointer hover:scale-110'
-					/>
-					<CiCirclePlus
-						size={35}
-						className='cursor-pointer text-[#b3b3b3] hover:text-white hover:scale-110'
-					/>
+					{isPlaying ? (
+						<FaCirclePause
+							size={60}
+							color='LimeGreen'
+							className='cursor-pointer hover:scale-110'
+							onClick={handlePlayPause}
+						/>
+					) : (
+						<FaCirclePlay
+							size={60}
+							color='LimeGreen'
+							className='cursor-pointer hover:scale-110'
+							onClick={handlePlayPause}
+						/>
+					)}
+					<CiCirclePlus size={35} className='text-white cursor-pointer' />
 				</div>
 				<PlaylistTrackList />
 			</div>

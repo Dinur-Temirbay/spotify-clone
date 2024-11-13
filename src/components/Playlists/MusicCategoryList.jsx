@@ -9,9 +9,7 @@ export function MusicCategoryList() {
 	return (
 		<div className='mt-6'>
 			<h2 className='text-white text-2xl font-semibold pl-5'>
-				<a href='#' className='hover:underline'>
-					Начни с этой музыки
-				</a>
+				Начни с этой музыки
 			</h2>
 			<div className='mt-3 px-3'>
 				<Slider {...settings}>
@@ -36,7 +34,9 @@ export function MusicCategoryList() {
 										className='rounded-md'
 									/>
 									<p className='text-[#b3b3b3] text-sm font-normal mt-2 line-clamp-2'>
-										{item.playListDescription?.join(', ')}
+										{item.playListDescription
+											.map(desc => desc.artist || desc.descr)
+											.join(', ')}
 									</p>
 									<FaCirclePlay
 										size={45}

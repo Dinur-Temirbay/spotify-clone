@@ -15,7 +15,7 @@ export function TrackLyric() {
 	}
 
 	return (
-		<div className='h-full w-full mt-2 mr-2 relative rounded-md bg-transparent'>
+		<div className='h-full w-full mt-2 mr-2 relative rounded-md bg-blue-500'>
 			<div className='px-16 pt-14 pb-36 w-full text-left h-screen overflow-y-scroll custom-scrollbar'>
 				{playlists[0].track[0].lyrics.map((item, sectionIndex) => (
 					<div key={sectionIndex} className='mb-4'>

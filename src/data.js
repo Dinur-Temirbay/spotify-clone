@@ -5,12 +5,13 @@ export const playlists = [
 		playlistImgSrc:
 			'https://seed-mix-image.spotifycdn.com/v6/img/artist/6qqNVTkY8uBg9cP3Jd7DAH/ru/default',
 		playListDescription: [
-			'The Weeknd',
-			'The Neighbourhood',
-			'Sabrina Carpenter'
+			{ artist: 'The Weeknd', artistId: 3 },
+			{ artist: 'The Neighbourhood', artistId: '' },
+			{ artist: 'Sabrina Carpenter', artistId: '' }
 		],
 		track: [
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62',
 				artistImg:
@@ -70,6 +71,7 @@ export const playlists = [
 				]
 			},
 			{
+				artistId: ['', '', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738940ac99f49e44f59e6f7fb3',
 				artistImg:
@@ -81,6 +83,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62',
 				artistImg:
@@ -92,6 +95,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273fd8d7a8d96871e791cb1f626',
 				artistImg:
@@ -103,6 +107,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d00004851a9f6c04ba168640b48aa5795',
 				artistImg:
@@ -114,6 +119,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2730c471c36970b9406233842a5',
 				artistImg:
@@ -125,6 +131,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: [1, ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738a3f0a3ca7929dea23cd274c',
 				artistImg:
@@ -136,6 +143,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: [3, ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273b5097b81179824803664aaaf',
 				artistImg:
@@ -147,6 +155,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27301c0cd5da820e6128655854f',
 				artistImg:
@@ -158,6 +167,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273459d675aa0b6f3b211357370',
 				artistImg:
@@ -169,6 +179,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273ed317ec13d3de9e01fb99c9e',
 				artistImg:
@@ -180,6 +191,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738fe69d8df304ff053693653e',
 				artistImg:
@@ -191,6 +203,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62',
 				artistImg:
@@ -209,9 +222,14 @@ export const playlists = [
 		playlistTitle: 'The Weeknd: микс',
 		playlistImgSrc:
 			'https://seed-mix-image.spotifycdn.com/v6/img/artist/1Xyo4u8uXC1ZmMpatF05PJ/ru/default',
-		playListDescription: ['Billie Eilish', 'Ariana Grande', 'Kali Uchis'],
+		playListDescription: [
+			{ artist: 'Billie Eilish', artistId: 1 },
+			{ artist: 'Ariana Grande', artistId: '' },
+			{ artist: 'Kali Uchis', artistId: '' }
+		],
 		track: [
 			{
+				artistId: 3,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36',
 				artistImg:
@@ -222,6 +240,7 @@ export const playlists = [
 				duration: '3:20'
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62',
 				artistImg:
@@ -233,17 +252,19 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: [3, ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273b5097b81179824803664aaaf',
 				artistImg:
 					'https://i.scdn.co/image/ab6761860000101606f7730314d8eff6663d6918',
 				title: 'Save Your Tears(Remix)(with Ariana Grande)',
-				artist: 'The Weeknd, Ariana Grande',
+				artist: ['The Weeknd', 'Ariana Grande'],
 				album: 'After Hours(Deluxe)',
 				duration: '3:11',
 				lyrics: ['']
 			},
 			{
+				artistId: 6,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273a840032f14ab22da396e43cb',
 				artistImg:
@@ -255,6 +276,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 6,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273be841ba4bc24340152e3a79a',
 				artistImg:
@@ -266,17 +288,19 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', '', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738940ac99f49e44f59e6f7fb3',
 				artistImg:
 					'https://i.scdn.co/image/ab6761860000101640e92f1410df729961fe3702',
 				title: 'See You Again (feat. Kali Uchis)',
-				artist: 'Tyler, The Creator, Kali Uchis',
+				artist: ['Tyler', 'The Creator', 'Kali Uchis'],
 				album: 'Flower Boy',
 				duration: '3:00',
 				lyrics: ['']
 			},
 			{
+				artistId: 3,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452',
 				artistImg:
@@ -288,6 +312,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273044a5466dac00f7b3c570b99',
 				artistImg:
@@ -299,6 +324,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62',
 				artistImg:
@@ -310,6 +336,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2734ae1c4c5c45aabe565499163',
 				artistImg:
@@ -321,6 +348,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605',
 				artistImg:
@@ -332,6 +360,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273712701c5e263efc8726b1464',
 				artistImg:
@@ -343,6 +372,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02',
 				artistImg:
@@ -354,6 +384,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738265a736a1eb838ad5a0b921',
 				artistImg:
@@ -365,6 +396,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27356ac7b86e090f307e218e9c8',
 				artistImg:
@@ -383,9 +415,14 @@ export const playlists = [
 		playlistTitle: 'Maroon 5: микс',
 		playlistImgSrc:
 			'https://seed-mix-image.spotifycdn.com/v6/img/artist/04gDigrS5kc9YWfZHwBETP/ru/default',
-		playListDescription: ['Sam Smith', 'Charlie Puth', 'Harry Styles'],
+		playListDescription: [
+			{ artist: 'Sam Smith', artistId: '' },
+			{ artist: 'Charlie Puth', artistId: '' },
+			{ artist: 'Harry Styles', artistId: '' }
+		],
 		track: [
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27386a8ab515de4b7aef28cd631',
 				artistImg:
@@ -397,6 +434,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: [3, ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273b5097b81179824803664aaaf',
 				artistImg:
@@ -408,6 +446,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273442b53773d50e1b5369bb16c',
 				artistImg:
@@ -419,6 +458,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 3,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738863bc11d2aa12b54f5aeb36',
 				artistImg:
@@ -430,6 +470,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273442b53773d50e1b5369bb16c',
 				artistImg:
@@ -441,6 +482,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273495ce6da9aeb159e94eaa453',
 				artistImg:
@@ -452,6 +494,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273fc8633e22a7dba6aab817bff',
 				artistImg:
@@ -463,6 +506,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02',
 				artistImg:
@@ -474,6 +518,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273deae7d931928fc1543e70203',
 				artistImg:
@@ -485,6 +530,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273d304ba2d71de306812eebaf4',
 				artistImg:
@@ -496,6 +542,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27386a8ab515de4b7aef28cd631',
 				artistImg:
@@ -507,6 +554,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27302df2d642b572cf4f284a5c3',
 				artistImg:
@@ -518,6 +566,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273fc8633e22a7dba6aab817bff',
 				artistImg:
@@ -529,6 +578,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2739e2f95ae77cf436017ada9cb',
 				artistImg:
@@ -540,6 +590,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27392f2d790c6a97b195f66d51e',
 				artistImg:
@@ -551,6 +602,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2731a4f1ada93881da4ca8060ff',
 				artistImg:
@@ -570,10 +622,11 @@ export const playlists = [
 		playlistImgSrc:
 			'https://i.scdn.co/image/ab67706f000000023909428545db5e34677f01f0',
 		playListDescription: [
-			'A mega mix of 75 favorites from the last few years!'
+			{ descr: 'A mega mix of 75 favorites from the last few years!' }
 		],
 		track: [
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2739478c87599550dd73bfa7e02',
 				artistImg:
@@ -585,6 +638,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27395f754318336a07e85ec59bc',
 				artistImg:
@@ -596,6 +650,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273a3a7f38ea2033aa501afd4cf',
 				artistImg:
@@ -607,6 +662,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a',
 				artistImg:
@@ -618,6 +674,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27386953b1cbaa29e477db0b479',
 				artistImg:
@@ -629,6 +686,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: [1, ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2738a3f0a3ca7929dea23cd274c',
 				artistImg:
@@ -640,6 +698,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2730af4476af141051c728ee8b9',
 				artistImg:
@@ -651,6 +710,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2735ef878a782c987d38d82b605',
 				artistImg:
@@ -662,6 +722,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a',
 				artistImg:
@@ -673,6 +734,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273933c036cd61cd40d3f17a9c4',
 				artistImg:
@@ -684,6 +746,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273ed317ec13d3de9e01fb99c9e',
 				artistImg:
@@ -695,6 +758,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', '', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2739f5cce8304c42d3a5463fd23',
 				artistImg:
@@ -706,6 +770,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2736c2b76e0d78170d577add561',
 				artistImg:
@@ -717,6 +782,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273e787cffec20aa2a396a61647',
 				artistImg:
@@ -728,6 +794,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273ef24c3fdbf856340d55cfeb2',
 				artistImg:
@@ -739,6 +806,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273a91c10fe9472d9bd89802e5a',
 				artistImg:
@@ -750,6 +818,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2731b55c3257d316d184d641800',
 				artistImg:
@@ -768,9 +837,10 @@ export const playlists = [
 		playlistTitle: 'Viral Hits',
 		playlistImgSrc:
 			'https://i.scdn.co/image/ab67706f00000002204335eb7d241ef0dbf5c5ad',
-		playListDescription: ['Viral, trending and taking off.'],
+		playListDescription: [{ descr: 'Viral, trending and taking off.' }],
 		track: [
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273536637d541ec8a43842ef126',
 				artistImg: '',
@@ -781,6 +851,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2731b1cb4ef0f096f9d66fc3dc6',
 				artistImg:
@@ -792,6 +863,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273e6065f209e0a01986206bd53',
 				artistImg:
@@ -803,6 +875,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2735b1130d050c4cd2295999d85',
 				artistImg:
@@ -814,6 +887,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273c800e1a4a237cf8f085183c5',
 				artistImg:
@@ -825,6 +899,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2737e76c17cfbc723800452a24f',
 				artistImg:
@@ -836,6 +911,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273d0495d03671b5d9a365db8f5',
 				artistImg:
@@ -847,6 +923,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27388e3822cccfb8f2832c70c2e',
 				artistImg:
@@ -858,6 +935,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2734d070fdf58fad8c54c5beb85',
 				artistImg:
@@ -869,6 +947,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273d9afe5c70c43cb2bd34605ea',
 				artistImg:
@@ -880,6 +959,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273a6cb8fab778e1efc406a5909',
 				artistImg:
@@ -891,6 +971,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', 1],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27355a1e72ba425c60a02a9bb47',
 				artistImg:
@@ -902,6 +983,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273938fa1b1ee50acdc57396e2f',
 				artistImg:
@@ -913,6 +995,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2736e423caed017991e802f8ee1',
 				artistImg:
@@ -931,9 +1014,14 @@ export const playlists = [
 		playlistTitle: 'Sabrina Carpenter: микс',
 		playlistImgSrc:
 			'https://seed-mix-image.spotifycdn.com/v6/img/artist/74KM79TiuVKeVCqs8QtB0B/ru/default',
-		playListDescription: ['Bille Eilish', 'JENNIE', 'Benson Boone'],
+		playListDescription: [
+			{ artist: 'Bille Eilish', artistId: 1 },
+			{ artist: 'JENNIE', artistId: 2 },
+			{ artist: 'Benson Boone', artistId: '' }
+		],
 		track: [
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273fd8d7a8d96871e791cb1f626',
 				artistImg:
@@ -945,6 +1033,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62',
 				artistImg:
@@ -956,6 +1045,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273fd8d7a8d96871e791cb1f626',
 				artistImg:
@@ -967,6 +1057,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: 1,
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b27371d62ea7ea8a5be92d3c1f62',
 				artistImg:
@@ -978,6 +1069,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273700f7bf79c9f063ad0362bdf',
 				artistImg:
@@ -989,6 +1081,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: ['', ''],
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273f8c8297efc6022534f1357e1',
 				artistImg:
@@ -1000,6 +1093,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2730f45623be014a592a5815827',
 				artistImg:
@@ -1011,6 +1105,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2730c471c36970b9406233842a5',
 				artistImg:
@@ -1022,6 +1117,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b2736f04e53cb5309f8e88286842',
 				artistImg:
@@ -1033,6 +1129,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273d20231861e86a6f74ef2393e',
 				artistImg:
@@ -1044,6 +1141,7 @@ export const playlists = [
 				lyrics: ['']
 			},
 			{
+				artistId: '',
 				imgSrc:
 					'https://i.scdn.co/image/ab67616d0000b273639c6811b5d0c6cfb145de3a',
 				artistImg:

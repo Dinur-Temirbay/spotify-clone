@@ -1,32 +1,44 @@
 import { Footer } from '../Footer/Footer';
-import { artist } from '../../data';
-import { user } from '../../data';
+import { artist, user } from '../../data';
 import { FaCirclePlay, FaCirclePause } from 'react-icons/fa6';
 import { ArtistTrackList } from './ArtistTrackList';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { useCurrentTrack } from '../../context/CurrentTrackContext';
 
 export function ArtistPlaylist() {
-	const { artistId } = useParams();
-	const artistPage = artist.find(p => p.artistId === parseInt(artistId));
+	const [isPlaying, setIsPlaying] = useState(false);
 	const [isSubscribed, setIsSubscribed] = useState(false);
+	const { artistId } = useParams();
+	const { setCurrentTrack } = useCurrentTrack();
+	const artistPage = artist.find(p => p.artistId === parseInt(artistId));
 
 	useEffect(() => {
-		setIsSubscribed(
-			user.subscribe.some(sub => sub.artistId === artistPage.artistId)
-		);
-	}, [artistPage.artistId]);
+		if (artistPage) {
+			setIsSubscribed(
+				user.subscribe.some(sub => sub.artistId === artistPage.artistId)
+			);
+		}
+	}, [artistPage]);
 
 	const handleSubscription = () => {
-		if (isSubscribed) {
-			user.subscribe = user.subscribe.filter(
-				sub => sub.artistId !== artistPage.artistId
-			);
-			setIsSubscribed(false);
-		} else {
-			user.subscribe.push(artistPage);
-			setIsSubscribed(true);
+		if (artistPage) {
+			if (isSubscribed) {
+				user.subscribe = user.subscribe.filter(
+					sub => sub.artistId !== artistPage.artistId
+				);
+			} else {
+				user.subscribe.push(artistPage);
+			}
+			setIsSubscribed(!isSubscribed);
+		}
+	};
+
+	const handlePlayPause = () => {
+		if (artistPage && artistPage.track.length > 0) {
+			setCurrentTrack(artistPage.track[0]);
+			setIsPlaying(!isPlaying);
 		}
 	};
 
@@ -57,12 +69,10 @@ export function ArtistPlaylist() {
 							{artistPage.artistName}
 						</h1>
 						<p className='text-white text-sm font-medium ml-2 mt-8'>
-							{
-								artistPage.track
-									.flatMap(track => track.listened || []) // Объединяем массивы `listened`
-									.reduce((acc, curr) => acc + curr, 0) // Суммируем все элементы
-									.toLocaleString('ru-RU') // Форматируем число с пробелами
-							}{' '}
+							{artistPage.track
+								.flatMap(track => track.listened || [])
+								.reduce((acc, curr) => acc + curr, 0)
+								.toLocaleString('ru-RU')}{' '}
 							слушателей за месяц
 						</p>
 					</div>
@@ -72,11 +82,21 @@ export function ArtistPlaylist() {
 			<div className='absolute top-[301px] inset-0 h-1/3 w-full bg-gradient-to-b from-white/5 to-transparent'></div>
 			<div className='px-6'>
 				<div className='flex items-center gap-6 mt-5 z-10 relative'>
-					<FaCirclePause
-						size={60}
-						color='LimeGreen'
-						className='cursor-pointer hover:scale-110'
-					/>
+					{isPlaying ? (
+						<FaCirclePause
+							size={60}
+							color='LimeGreen'
+							className='cursor-pointer hover:scale-110'
+							onClick={handlePlayPause}
+						/>
+					) : (
+						<FaCirclePlay
+							size={60}
+							color='LimeGreen'
+							className='cursor-pointer hover:scale-110'
+							onClick={handlePlayPause}
+						/>
+					)}
 					<button
 						className={`text-white text-sm font-semibold px-4 py-1 border-[1px] border-white/50
 							${isSubscribed ? ' border-white/50' : 'hover:border-white'}
