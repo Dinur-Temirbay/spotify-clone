@@ -5,26 +5,48 @@ import { FaCirclePlay, FaCirclePause } from 'react-icons/fa6';
 import { CiCirclePlus } from 'react-icons/ci';
 import { useParams } from 'react-router-dom';
 import { useCurrentTrack } from '../../context/CurrentTrackContext';
-import { useState } from 'react';
+import { usePlaylist } from '../../context/PlaylistContext';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FaCheckCircle } from 'react-icons/fa';
 
 export function PlaylistTracks() {
 	const [isPlaying, setIsPlaying] = useState(false);
+	const [isAdded, setIsAdded] = useState(false);
 	const { playlistId } = useParams();
-	const { artistId } = useParams();
 	const { setCurrentTrack } = useCurrentTrack();
+	const { playList, addPlaylist, removePlaylist } = usePlaylist();
 	const playlist = playlists.find(p => p.playlistId === parseInt(playlistId));
 
-	if (!playlist) {
-		return <div className='text-white'>Playlist not found</div>;
-	}
+	useEffect(() => {
+		const alreadyAdded = playList.some(
+			p => p.playlistId === playlist.playlistId
+		);
+		setIsAdded(alreadyAdded);
+	}, [playList, playlist]);
 
 	const handlePlayPause = () => {
 		if (!isPlaying && playlist.track.length > 0) {
 			setCurrentTrack(playlist.track[0]);
 			setIsPlaying(!isPlaying);
+		} else {
+			setIsPlaying(!isPlaying);
 		}
 	};
+
+	const handleAddPlaylist = () => {
+		addPlaylist(playlist);
+		setIsAdded(true);
+	};
+
+	const handleRemovePlaylist = () => {
+		removePlaylist(playlist.playlistId);
+		setIsAdded(false);
+	};
+
+	if (!playlist) {
+		return <div className='text-white'>Playlist not found</div>;
+	}
 
 	return (
 		<div className='h-screen mt-2 mr-2 relative overflow-y-scroll custom-scrollbar rounded-md bg-[#121212]'>
@@ -79,11 +101,24 @@ export function PlaylistTracks() {
 						<FaCirclePlay
 							size={60}
 							color='LimeGreen'
-							className='cursor-pointer hover:scale-110'
+							className='cursor-pointer hover:scale-105'
 							onClick={handlePlayPause}
 						/>
 					)}
-					<CiCirclePlus size={35} className='text-white cursor-pointer' />
+					{isAdded ? (
+						<FaCheckCircle
+							size={35}
+							color='LimeGreen'
+							className='cursor-pointer hover:scale-105'
+							onClick={handleRemovePlaylist}
+						/>
+					) : (
+						<CiCirclePlus
+							size={35}
+							className='text-white cursor-pointer hover:scale-105'
+							onClick={handleAddPlaylist}
+						/>
+					)}
 				</div>
 				<PlaylistTrackList />
 			</div>

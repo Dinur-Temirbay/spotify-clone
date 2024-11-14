@@ -1,44 +1,47 @@
 import { Footer } from '../Footer/Footer';
-import { artist, user } from '../../data';
+import { artist } from '../../data';
 import { FaCirclePlay, FaCirclePause } from 'react-icons/fa6';
 import { ArtistTrackList } from './ArtistTrackList';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { useCurrentTrack } from '../../context/CurrentTrackContext';
+import { useSubscribe } from '../../context/SubscribeContext';
 
 export function ArtistPlaylist() {
 	const [isPlaying, setIsPlaying] = useState(false);
 	const [isSubscribed, setIsSubscribed] = useState(false);
 	const { artistId } = useParams();
 	const { setCurrentTrack } = useCurrentTrack();
+	const { addSubscription, removeSubscription, subscribe } = useSubscribe();
 	const artistPage = artist.find(p => p.artistId === parseInt(artistId));
 
 	useEffect(() => {
 		if (artistPage) {
 			setIsSubscribed(
-				user.subscribe.some(sub => sub.artistId === artistPage.artistId)
+				subscribe.some(sub => sub.artistId === artistPage.artistId)
 			);
 		}
-	}, [artistPage]);
-
-	const handleSubscription = () => {
-		if (artistPage) {
-			if (isSubscribed) {
-				user.subscribe = user.subscribe.filter(
-					sub => sub.artistId !== artistPage.artistId
-				);
-			} else {
-				user.subscribe.push(artistPage);
-			}
-			setIsSubscribed(!isSubscribed);
-		}
-	};
+	}, [artistPage, subscribe]);
 
 	const handlePlayPause = () => {
 		if (artistPage && artistPage.track.length > 0) {
 			setCurrentTrack(artistPage.track[0]);
 			setIsPlaying(!isPlaying);
+		}
+	};
+
+	const handleAddSubscription = () => {
+		if (artistPage) {
+			addSubscription(artistPage);
+			setIsSubscribed(prevState => !prevState);
+		}
+	};
+
+	const handleRemoveSubscription = () => {
+		if (artistPage) {
+			removeSubscription(artistPage.artistId);
+			setIsSubscribed(false);
 		}
 	};
 
@@ -101,7 +104,9 @@ export function ArtistPlaylist() {
 						className={`text-white text-sm font-semibold px-4 py-1 border-[1px] border-white/50
 							${isSubscribed ? ' border-white/50' : 'hover:border-white'}
 							hover:scale-105 rounded-full`}
-						onClick={handleSubscription}
+						onClick={
+							isSubscribed ? handleRemoveSubscription : handleAddSubscription
+						}
 					>
 						{isSubscribed ? 'Уже подписаны' : 'Подписаться'}
 					</button>

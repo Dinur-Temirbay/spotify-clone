@@ -1971,5 +1971,6 @@ export const user = {
 		artistPlayList: []
 	},
 	favorites: [],
-	subscribe: []
+	subscribe: [],
+	playLists: []
 };

@@ -1,12 +1,14 @@
 import Slider from 'react-slick';
 import { Link } from 'react-router-dom';
 import { settings } from '../Playlists/slider-settings';
-import { user } from '../../data';
+import { useSubscribe } from '../../context/SubscribeContext';
 
 export function Subscribe() {
+	const { subscribe } = useSubscribe();
+
 	return (
 		<>
-			{user.subscribe.length >= 1 ? (
+			{subscribe.length >= 1 ? (
 				<div>
 					<h2 className='text-white text-2xl font-semibold pl-5'>
 						<a href='#' className='hover:underline'>
@@ -15,7 +17,7 @@ export function Subscribe() {
 					</h2>
 					<div className='mt-3 px-3'>
 						<Slider {...settings}>
-							{user.subscribe.map((item, index) => (
+							{subscribe.map((item, index) => (
 								<div key={index}>
 									<Link to={`/artistPlaylist/${item.artistId}`}>
 										<div

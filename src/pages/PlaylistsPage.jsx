@@ -20,7 +20,7 @@ export function PlaylistsPage() {
 							<img
 								src={user.imgSrc}
 								alt='User'
-								className='rounded-full w-9 h-9 cursor-pointer hover:scale-110'
+								className='rounded-full w-9 h-9 cursor-pointer hover:scale-110 object-cover'
 							/>
 						) : (
 							<div className='flex items-center justify-center w-9 h-9 rounded-full bg-orange-500'>

@@ -18,7 +18,8 @@ export function Modal({ onClose, onSave }) {
 		}
 	};
 
-	const handleSave = () => {
+	const handleSubmit = event => {
+		event.preventDefault();
 		updateUserName(value);
 		onSave(profileImage);
 	};
@@ -36,12 +37,15 @@ export function Modal({ onClose, onSave }) {
 						/>
 					</div>
 				</div>
-				<div className='mt-4 flex items-center gap-4 relative'>
+				<form
+					onSubmit={handleSubmit}
+					className='mt-4 flex items-center gap-4 relative'
+				>
 					{profileImage ? (
 						<img
 							src={profileImage}
 							alt='User'
-							className='w-44 h-44 rounded-full cursor-pointer'
+							className='w-44 h-44 rounded-full cursor-pointer object-cover'
 						/>
 					) : (
 						<div className='w-44 h-44 rounded-full bg-zinc-800/80 flex justify-center items-center shadow-md shadow-black'>
@@ -69,13 +73,13 @@ export function Modal({ onClose, onSave }) {
 							onChange={e => setValue(e.target.value)}
 						/>
 						<button
+							type='submit'
 							className='bg-white py-2 px-6 rounded-full text-black font-semibold hover:scale-105 ml-auto'
-							onClick={handleSave}
 						>
 							Сохранить
 						</button>
 					</div>
-				</div>
+				</form>
 				<p className='mt-4 text-[11px] text-white font-semibold'>
 					Продолжая, ты предоставляешь Spotify доступ к выбранному изображению.
 					Пожалуйста, не загружай файлы, которые ты не имеешь права

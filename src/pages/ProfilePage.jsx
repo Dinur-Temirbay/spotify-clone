@@ -1,20 +1,25 @@
 import { Footer } from '../components/Footer/Footer';
-import { user } from '../data';
 import { Modal } from '../components/Modal/Modal';
 import { useState, useContext } from 'react';
 import { Subscribe } from '../components/Profile/Subscribe';
 import { FaUser } from 'react-icons/fa';
 import { UserContext } from '../context/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 export function ProfilePage() {
 	const { user, updateUserImage } = useContext(UserContext);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const navigate = useNavigate();
 
 	const toggleModal = () => setIsModalOpen(!isModalOpen);
 
 	const handleSaveProfileImage = newImage => {
 		updateUserImage(newImage);
 		toggleModal();
+	};
+
+	const handleLogout = () => {
+		navigate('/signIn');
 	};
 
 	return (
@@ -26,7 +31,7 @@ export function ProfilePage() {
 						<img
 							src={user.imgSrc}
 							alt='User'
-							className='w-44 h-44 rounded-full'
+							className='w-44 h-44 rounded-full object-cover'
 						/>
 					) : (
 						<div className='w-44 h-44 rounded-full bg-zinc-800/80 flex justify-center items-center shadow-md shadow-black'>
@@ -52,7 +57,10 @@ export function ProfilePage() {
 				>
 					Редактировать
 				</button>
-				<button className='p-2 bg-white rounded-md cursor-pointer z-10 relative hover:scale-105'>
+				<button
+					className='p-2 bg-white rounded-md cursor-pointer z-10 relative hover:scale-105'
+					onClick={handleLogout}
+				>
 					Выйти
 				</button>
 			</div>
