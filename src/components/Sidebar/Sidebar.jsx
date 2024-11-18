@@ -29,10 +29,12 @@ export function Sidebar() {
 			</div>
 			<div className='py-4 px-2 bg-[#121212] mt-2 rounded-md h-full'>
 				<div className='flex items-center justify-between px-2'>
-					<TbPlaylist size={30} color='white' />
-					<h2 className='text-[#b3b3b3] hover:text-white cursor-pointer relative right-16'>
-						Ваша медиатека
-					</h2>
+					<div className='flex items-center gap-3'>
+						<TbPlaylist size={30} color='white' />
+						<h2 className='text-[#b3b3b3] hover:text-white cursor-pointer'>
+							Ваша медиатека
+						</h2>
+					</div>
 					<div className='rounded-full hover:bg-white/5'>
 						<GoPlus
 							size={25}

@@ -4,14 +4,18 @@ import { AudioPlayer } from '../components/AudioPlayer/AudioPlayer';
 
 export function Layout() {
 	return (
-		<div className='flex h-screen'>
-			<aside className='w-[25%] fixed left-0'>
-				<Sidebar />
-			</aside>
-			<main className='w-[75%] fixed right-0'>
-				<Outlet />
-			</main>
-			<AudioPlayer />
+		<div className='flex flex-col h-screen'>
+			<div className='flex flex-1 overflow-hidden'>
+				<aside className='w-[25%] min-w-[380px]'>
+					<Sidebar />
+				</aside>
+				<main className='flex-1 overflow-hidden'>
+					<Outlet />
+				</main>
+			</div>
+			<div className='fixed bottom-0 w-full z-10'>
+				<AudioPlayer />
+			</div>
 		</div>
 	);
 }

@@ -14,7 +14,7 @@ export function SidebarArtistList() {
 							<img
 								src={item.artistPlaylistImg}
 								alt='sidebarArtistImg'
-								className='rounded-sm'
+								className='rounded-full'
 							/>
 							<FaPlay
 								color='white'

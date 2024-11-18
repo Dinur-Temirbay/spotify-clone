@@ -4,17 +4,17 @@ import { FaGithub } from 'react-icons/fa6';
 export function Footer() {
 	return (
 		<div className='mt-20 px-10'>
-			<div className='flex justify-between mb-10'>
-				<div className='w-1/5'>
+			<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10 mb-10'>
+				<div>
 					<ul>
 						<li className='text-white font-bold'>Компания</li>
 						<li className='text-[#b3b3b3] font-medium hover:text-white leading-10'>
-							<a href='#' className='cursor-pointer hover:underline '>
+							<a href='#' className='cursor-pointer hover:underline'>
 								О нас
 							</a>
 						</li>
 						<li className='text-[#b3b3b3] font-medium hover:text-white'>
-							<a href='#' className='cursor-pointer hover:underline '>
+							<a href='#' className='cursor-pointer hover:underline'>
 								Вакансии
 							</a>
 						</li>
@@ -25,21 +25,21 @@ export function Footer() {
 						</li>
 					</ul>
 				</div>
-				<div className='w-1/5'>
+				<div>
 					<ul>
 						<li className='text-white font-bold'>Сообщества</li>
 						<li className='text-[#b3b3b3] font-medium hover:text-white leading-10'>
-							<a href='#' className='cursor-pointer hover:underline '>
+							<a href='#' className='cursor-pointer hover:underline'>
 								Для исполнителей
 							</a>
 						</li>
 						<li className='text-[#b3b3b3] font-medium hover:text-white'>
-							<a href='#' className='cursor-pointer hover:underline '>
+							<a href='#' className='cursor-pointer hover:underline'>
 								Для разработчиков
 							</a>
 						</li>
 						<li className='text-[#b3b3b3] font-medium hover:text-white leading-10'>
-							<a href='#' className='cursor-pointer hover:underline '>
+							<a href='#' className='cursor-pointer hover:underline'>
 								Реклама
 							</a>
 						</li>
@@ -55,7 +55,7 @@ export function Footer() {
 						</li>
 					</ul>
 				</div>
-				<div className='w-1/5'>
+				<div>
 					<ul>
 						<li className='text-white font-bold'>Полезные ссылки</li>
 						<li className='text-[#b3b3b3] font-medium hover:text-white leading-10'>
@@ -70,7 +70,7 @@ export function Footer() {
 						</li>
 					</ul>
 				</div>
-				<div className='w-1/6'>
+				<div>
 					<ul>
 						<li className='text-white font-bold leading-8'>Планы Spotify</li>
 						<li className='text-[#b3b3b3] font-medium hover:text-white'>
@@ -78,7 +78,7 @@ export function Footer() {
 								Индивидуальная подписка Spotify Premium
 							</a>
 						</li>
-						<li className='text-[#b3b3b3] font-medium hover:text-white leading-10   '>
+						<li className='text-[#b3b3b3] font-medium hover:text-white leading-10'>
 							<a href='#' className='cursor-pointer hover:underline'>
 								Premium для двоих
 							</a>
@@ -101,7 +101,7 @@ export function Footer() {
 					</ul>
 				</div>
 				<div className='flex gap-4'>
-					<div className='w-10 h-10 bg-white/20 rounded-full flex justify-center items-center hover:bg-white/35 '>
+					<div className='w-10 h-10 bg-white/20 rounded-full flex justify-center items-center hover:bg-white/35'>
 						<a
 							href='https://www.linkedin.com/in/dinur-temirbay-295662274/'
 							className='cursor-pointer'
@@ -125,9 +125,9 @@ export function Footer() {
 				</div>
 			</div>
 			<div className='h-[1px] bg-gray-500 rounded-full'></div>
-			<div className='mt-10 mb-44 flex justify-between'>
-				<div className='flex w-5/6'>
-					<ul className='flex flex-wrap gap-x-6 gap-y-2'>
+			<div className='mt-10 mb-44 flex flex-col sm:flex-row justify-between items-center sm:items-start'>
+				<div className='w-full sm:w-5/6'>
+					<ul className='flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2'>
 						<li className='text-[#b3b3b3] font-medium text-sm hover:text-white'>
 							<a href='#'>Юридическая информация</a>
 						</li>
@@ -148,7 +148,7 @@ export function Footer() {
 						</li>
 					</ul>
 				</div>
-				<span className='text-[#b3b3b3] text-sm font-medium'>
+				<span className='text-[#b3b3b3] text-sm font-medium mt-4 sm:mt-0'>
 					© 2024 Spotify AB
 				</span>
 			</div>
