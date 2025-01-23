@@ -2,6 +2,7 @@ import { Footer } from '../Footer/Footer';
 import { artist } from '../../data';
 import { FaCirclePlay, FaCirclePause } from 'react-icons/fa6';
 import { ArtistTrackList } from './ArtistTrackList';
+import { ArtistAbout } from './ArtistAbout';
 import { BsFillPatchCheckFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
@@ -112,6 +113,7 @@ export function ArtistPlaylist() {
 					</button>
 				</div>
 				<ArtistTrackList />
+				<ArtistAbout />
 			</div>
 			<Footer />
 		</div>

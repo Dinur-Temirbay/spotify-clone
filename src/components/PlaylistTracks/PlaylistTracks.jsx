@@ -56,14 +56,14 @@ export function PlaylistTracks() {
 					<img
 						src={playlist.playlistImgSrc}
 						alt='PlaylistTrack'
-						className='rounded-md lg:w-48 w-44'
+						className='rounded-md lg:w-48 w-40'
 					/>
 					<div className='flex flex-col'>
 						<p className='text-white text-sm font-semibold pl-1'>Плейлист</p>
 						<h1 className='text-white lg:text-6xl text-4xl font-extrabold'>
 							{playlist.playlistTitle}
 						</h1>
-						<p className='text-white mt-5 ml-2'>
+						<p className='text-white text-sm font-sans font-medium mt-5 ml-2'>
 							{playlist.playListDescription.map((item, index) => (
 								<span key={index}>
 									<Link

@@ -28,6 +28,7 @@ export function FullScreen() {
 	const navigate = useNavigate();
 	const [isPlayerVisible, setIsPlayerVisible] = useState(true);
 	const [isAnimated, setIsAnimated] = useState(false);
+
 	let inactivityTimer;
 
 	const handleExitFullScreenClick = () => {

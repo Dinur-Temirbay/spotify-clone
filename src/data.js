@@ -109,7 +109,7 @@ export const playlists = [
 			{
 				artistId: 1,
 				imgSrc:
-					'https://i.scdn.co/image/ab67616d00004851a9f6c04ba168640b48aa5795',
+					'https://i.scdn.co/image/ab67616d0000b273a9f6c04ba168640b48aa5795',
 				artistImg:
 					'https://i.scdn.co/image/ab676186000010162d84c1b04696c09702a15b85',
 				title: 'ocean eyes',
@@ -237,7 +237,8 @@ export const playlists = [
 				title: 'Blinding Lights',
 				artist: 'The Weeknd',
 				album: 'After Hours',
-				duration: '3:20'
+				duration: '3:20',
+				lyrics: ['']
 			},
 			{
 				artistId: 1,
@@ -1234,7 +1235,7 @@ export const artist = [
 			},
 			{
 				imgSrc:
-					'https://i.scdn.co/image/ab67616d00004851a9f6c04ba168640b48aa5795',
+					'https://i.scdn.co/image/ab67616d0000b273a9f6c04ba168640b48aa5795',
 				artistImg:
 					'https://i.scdn.co/image/ab676186000010162d84c1b04696c09702a15b85',
 				artist: 'Billie Eilish',

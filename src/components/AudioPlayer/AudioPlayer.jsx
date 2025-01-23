@@ -10,13 +10,12 @@ import { CiCirclePlus } from 'react-icons/ci';
 import { ImVolumeMute2 } from 'react-icons/im';
 import { AiOutlineFullscreen } from 'react-icons/ai';
 import { FaCheckCircle } from 'react-icons/fa';
+import { CgPlayButtonR } from 'react-icons/cg';
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
 import { useCurrentTrack } from '../../context/CurrentTrackContext';
 import { useFavorites } from '../../context/FavoritesContext';
 
-export function AudioPlayer() {
-	const [isLyricVisible, setIsLyricVisible] = useState(false);
+export function AudioPlayer({ musicDetails, setMusicDetails }) {
 	const { currentTrack } = useCurrentTrack();
 	const { addFavorite, favorites } = useFavorites();
 
@@ -27,9 +26,17 @@ export function AudioPlayer() {
 	};
 
 	const toggleLyrics = () => {
-		if (currentTrack) {
-			setIsLyricVisible(prev => !prev);
-		}
+		setMusicDetails(prev => ({
+			...prev,
+			isLyricVisible: !prev.isLyricVisible
+		}));
+	};
+
+	const toggleMusicInfo = () => {
+		setMusicDetails(prev => ({
+			...prev,
+			isMusicInfoVisible: !prev.isMusicInfoVisible
+		}));
 	};
 
 	const handleAddToFavorite = currentTrack => {
@@ -108,17 +115,24 @@ export function AudioPlayer() {
 
 					{/* Right Section */}
 					<div className='flex justify-end items-center gap-4 w-1/3'>
-						<Link to={currentTrack ? '/trackLyric' : '#'}>
-							<TbMicrophone2
-								size={20}
-								className={`${
-									isLyricVisible
-										? 'text-teal-500'
-										: 'cursor-pointer text-[#b3b3b3] hover:text-white hover:scale-110'
-								}`}
-								onClick={toggleLyrics}
-							/>
-						</Link>
+						<CgPlayButtonR
+							size={20}
+							className={`${
+								musicDetails.isMusicInfoVisible
+									? 'cursor-pointer text-teal-500 hover:text-teal hover:scale-110'
+									: 'cursor-pointer text-[#b3b3b3] hover:text-white hover:scale-110'
+							}`}
+							onClick={toggleMusicInfo}
+						/>
+						<TbMicrophone2
+							size={20}
+							className={`${
+								musicDetails.isLyricVisible
+									? 'cursor-pointer text-teal-500 hover:text-teal hover:scale-110'
+									: 'cursor-pointer text-[#b3b3b3] hover:text-white hover:scale-110'
+							}`}
+							onClick={toggleLyrics}
+						/>
 						<ImVolumeMute2
 							size={20}
 							className='cursor-pointer text-[#b3b3b3] hover:text-white hover:scale-110'

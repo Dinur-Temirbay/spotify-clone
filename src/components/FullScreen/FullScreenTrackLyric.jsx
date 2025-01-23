@@ -19,7 +19,7 @@ import { Link } from 'react-router-dom';
 import { playlists } from '../../data';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TrackLyric } from '../../pages/TrackLyric';
+import { TrackLyric } from '../TrackLyric/TrackLyric';
 
 export function FullScreenTrackLyric() {
 	const navigate = useNavigate();

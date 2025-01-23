@@ -31,7 +31,7 @@ export function PlaylistTrackList() {
 						<th className='text-center min-w-12'>#</th>
 						<th className='w-1/3'>Название</th>
 						<th className='w-1/3'>Альбом</th>
-						<th className='w-4/5'>Дата добавления</th>
+						<th className='w-1/3'>Дата добавления</th>
 						<th></th>
 						<th className='pl-2'>
 							<CgTime size={20} />
@@ -54,12 +54,12 @@ export function PlaylistTrackList() {
 									className='rounded-md'
 								/>
 								<div>
-									<p className='text-white truncate w-60'>
+									<p className='text-white truncate max-w-44 text-sm font-sans font-semibold'>
 										<a href='#' className='cursor-pointer hover:underline'>
 											{item.title}
 										</a>
 									</p>
-									<p className='text-sm font-medium '>
+									<p className='text-sm font-sans font-medium'>
 										{Array.isArray(item.artist) ? (
 											item.artist.map((artist, index) => {
 												const artistLink =
@@ -94,8 +94,11 @@ export function PlaylistTrackList() {
 									</p>
 								</div>
 							</td>
-							<td className='truncate w-40'>
-								<a href='#' className='hover:text-white hover:underline'>
+							<td>
+								<a
+									href='#'
+									className='hover:text-white hover:underline text-sm font-sans font-medium'
+								>
 									{item.album}
 								</a>
 							</td>

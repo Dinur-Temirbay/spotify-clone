@@ -1,7 +1,7 @@
 import { Footer } from '../components/Footer/Footer';
 import { Modal } from '../components/Modal/Modal';
 import { useState, useContext } from 'react';
-import { Subscribe } from '../components/Profile/Subscribe';
+import { ProfileSubscribe } from '../components/Profile/ProfileSubscribe';
 import { FaUser } from 'react-icons/fa';
 import { UserContext } from '../context/UserContext';
 import { useNavigate } from 'react-router-dom';
@@ -70,7 +70,7 @@ export function ProfilePage() {
 			{isModalOpen && (
 				<Modal onClose={toggleModal} onSave={handleSaveProfileImage} />
 			)}
-			<Subscribe />
+			<ProfileSubscribe />
 			<Footer />
 		</div>
 	);

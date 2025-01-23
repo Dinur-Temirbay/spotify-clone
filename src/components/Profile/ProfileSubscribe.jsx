@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { settings } from '../Playlists/slider-settings';
 import { useSubscribe } from '../../context/SubscribeContext';
 
-export function Subscribe() {
+export function ProfileSubscribe() {
 	const { subscribe } = useSubscribe();
 
 	return (

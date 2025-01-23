@@ -1,6 +1,6 @@
-import { playlists } from '../data';
+import { playlists } from '../../data';
 
-export function TrackLyric() {
+export function TrackLyric({}) {
 	if (
 		!playlists[0].track || // Проверяем, существует ли массив track
 		playlists[0].track.length === 0 || // Проверяем, что массив не пустой

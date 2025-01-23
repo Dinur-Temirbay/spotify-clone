@@ -7,7 +7,7 @@ import { FavoritePlaylist } from './components/FavoritePlaylist/FavoritePlaylist
 import { ProfilePage } from './pages/ProfilePage';
 import { HomePage } from './pages/HomePage';
 import { FullScreen } from './pages/FullScreen';
-import { TrackLyric } from './pages/TrackLyric';
+import { CurrMusicInfo } from './components/CurrMusicInfo/CurrMusicInfo';
 import { FullScreenTrackLyric } from './components/FullScreen/FullScreenTrackLyric';
 import { AuthPage } from './pages/AuthPage';
 import { Layout } from './components/Layout';
@@ -42,7 +42,7 @@ function App() {
 										path='favoritePlaylist'
 										element={<FavoritePlaylist />}
 									/>
-									<Route path='trackLyric' element={<TrackLyric />} />
+									<Route path='currentMusicInfo' element={<CurrMusicInfo />} />
 								</Route>
 								<Route path='fullscreen' element={<FullScreen />} />
 								<Route
